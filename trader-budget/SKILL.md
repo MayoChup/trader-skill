@@ -12,6 +12,8 @@ description: >-
   over 25%", "set my rules", or after /trader-copycat writes targets.
 argument-hint: "[budget in dollars]"
 ---
+> **Kantor Rico:** jalankan semua perintah dari folder kerja `~/trader-desk` (`cd ~/trader-desk` dulu) supaya file `trader/` selalu sama. Jawab pemilik dalam Bahasa Indonesia. Kantor TIDAK tersambung ke broker: jangan pernah membeli/menjual.
+
 
 # trader-budget
 
@@ -19,13 +21,13 @@ The Budget Manager turns "copy this portfolio" into "buy exactly this much of
 each", inside rules the user sets once. It writes proposals only. trader-risk
 checks them and trader-broker asks the user yes or no for each one.
 
-`${CLAUDE_SKILL_DIR}` below is this skill's folder (where this SKILL.md lives).
+Skrip skill ini ada di folder `$HOME/.hermes/skills/trader-skill/trader-budget`.
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/size.py"                       # trader/targets.json + trader/config.json
-python3 "${CLAUDE_SKILL_DIR}/size.py" --budget 5000 --write # write trader/orders.json
-python3 "${CLAUDE_SKILL_DIR}/size.py" --whole-shares --prices trader/prices.json
-python3 "${CLAUDE_SKILL_DIR}/size.py" --weights AAPL=22.04,AXP=17.14,GOOGL=12.62 --json
+python3 "$HOME/.hermes/skills/trader-skill/trader-budget/size.py"                       # trader/targets.json + trader/config.json
+python3 "$HOME/.hermes/skills/trader-skill/trader-budget/size.py" --budget 5000 --write # write trader/orders.json
+python3 "$HOME/.hermes/skills/trader-skill/trader-budget/size.py" --whole-shares --prices trader/prices.json
+python3 "$HOME/.hermes/skills/trader-skill/trader-budget/size.py" --weights AAPL=22.04,AXP=17.14,GOOGL=12.62 --json
 ```
 
 ## What it reads and writes
@@ -53,7 +55,7 @@ If `trader/config.json` does not exist, copy `config.example.json` into
 ## Step 2: size it
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/size.py" --write
+python3 "$HOME/.hermes/skills/trader-skill/trader-budget/size.py" --write
 ```
 
 The maths, in order: the cash buffer comes off the top; the weights are

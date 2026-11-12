@@ -12,6 +12,8 @@ description: >-
   "get me prices", or to refresh prices before sizing, risk or tax.
 argument-hint: "[ticker] [price]"
 ---
+> **Kantor Rico:** jalankan semua perintah dari folder kerja `~/trader-desk` (`cd ~/trader-desk` dulu) supaya file `trader/` selalu sama. Jawab pemilik dalam Bahasa Indonesia. Kantor TIDAK tersambung ke broker: jangan pernah membeli/menjual.
+
 
 # trader-alerts
 
@@ -19,19 +21,19 @@ Price Alerts watches the numbers so the user does not have to. An alert is
 information, never an order: when a stop rings, nothing is sold. If the user
 wants to act, the normal path runs (size, risk, their yes).
 
-`${CLAUDE_SKILL_DIR}` below is this skill's folder (where this SKILL.md lives).
+Skrip skill ini ada di folder `$HOME/.hermes/skills/trader-skill/trader-alerts`.
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/alerts.py" clock                         # NYSE open or closed, next open
-python3 "${CLAUDE_SKILL_DIR}/alerts.py" quote AAPL KO --write         # -> trader/prices.json
-python3 "${CLAUDE_SKILL_DIR}/alerts.py" quote --holdings --write      # portfolio + targets tickers
-python3 "${CLAUDE_SKILL_DIR}/alerts.py" add --symbol AAPL --above 350
-python3 "${CLAUDE_SKILL_DIR}/alerts.py" add --symbol BAC --stop 50 --note "my stop"
-python3 "${CLAUDE_SKILL_DIR}/alerts.py" add --symbol KO --pct 3
-python3 "${CLAUDE_SKILL_DIR}/alerts.py" add --opening-bell
-python3 "${CLAUDE_SKILL_DIR}/alerts.py" check                         # exit 0 = something rang
-python3 "${CLAUDE_SKILL_DIR}/alerts.py" list
-python3 "${CLAUDE_SKILL_DIR}/alerts.py" reset aapl-above-350
+python3 "$HOME/.hermes/skills/trader-skill/trader-alerts/alerts.py" clock                         # NYSE open or closed, next open
+python3 "$HOME/.hermes/skills/trader-skill/trader-alerts/alerts.py" quote AAPL KO --write         # -> trader/prices.json
+python3 "$HOME/.hermes/skills/trader-skill/trader-alerts/alerts.py" quote --holdings --write      # portfolio + targets tickers
+python3 "$HOME/.hermes/skills/trader-skill/trader-alerts/alerts.py" add --symbol AAPL --above 350
+python3 "$HOME/.hermes/skills/trader-skill/trader-alerts/alerts.py" add --symbol BAC --stop 50 --note "my stop"
+python3 "$HOME/.hermes/skills/trader-skill/trader-alerts/alerts.py" add --symbol KO --pct 3
+python3 "$HOME/.hermes/skills/trader-skill/trader-alerts/alerts.py" add --opening-bell
+python3 "$HOME/.hermes/skills/trader-skill/trader-alerts/alerts.py" check                         # exit 0 = something rang
+python3 "$HOME/.hermes/skills/trader-skill/trader-alerts/alerts.py" list
+python3 "$HOME/.hermes/skills/trader-skill/trader-alerts/alerts.py" reset aapl-above-350
 ```
 
 ## What it reads and writes

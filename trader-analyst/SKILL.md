@@ -12,6 +12,8 @@ description: >-
   "run the analyst on my holdings".
 argument-hint: "[tickers]"
 ---
+> **Kantor Rico:** jalankan semua perintah dari folder kerja `~/trader-desk` (`cd ~/trader-desk` dulu) supaya file `trader/` selalu sama. Jawab pemilik dalam Bahasa Indonesia. Kantor TIDAK tersambung ke broker: jangan pernah membeli/menjual.
+
 
 # trader-analyst
 
@@ -22,7 +24,7 @@ with the SEC, lines them up quarter by quarter, and says plainly what changed.
 Tool in this folder (standard library Python, no keys):
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/facts.py" --help
+python3 "$HOME/.hermes/skills/trader-skill/trader-analyst/facts.py" --help
 ```
 
 It needs the SEC User-Agent (`sec_user_agent` in `trader/config.json`, or
@@ -65,8 +67,8 @@ email. It refuses to call SEC without one.
    `trader/targets.json`):
 
    ```bash
-   python3 "${CLAUDE_SKILL_DIR}/facts.py" AAPL
-   python3 "${CLAUDE_SKILL_DIR}/facts.py" AAPL AXP GOOGL KO BAC --metrics trader/metrics.json
+   python3 "$HOME/.hermes/skills/trader-skill/trader-analyst/facts.py" AAPL
+   python3 "$HOME/.hermes/skills/trader-skill/trader-analyst/facts.py" AAPL AXP GOOGL KO BAC --metrics trader/metrics.json
    ```
 
    `--quarters 8` shows two years, `--json` everything machine-readable,

@@ -6,13 +6,13 @@ import unittest
 from _load import ROOT
 
 SKILLS = ["trader-copycat", "trader-news", "trader-budget", "trader-pelosi", "trader-analyst",
-          "trader-screener", "trader-risk", "trader-broker", "trader-tax", "trader-alerts",
+          "trader-screener", "trader-risk", "trader-alerts", "trader-kantor",
           "trader-rebalance"]
 ABOUT = ("11 Claude skills that copy the investors you trust, watch the news and Congress, size every "
          "trade to your budget, and never place an order without your yes.")
 # skills that can lead to an order carry the safety block
-ORDER_PATH = ["trader-copycat", "trader-budget", "trader-pelosi", "trader-risk", "trader-broker",
-              "trader-tax", "trader-alerts", "trader-rebalance"]
+ORDER_PATH = ["trader-copycat", "trader-budget", "trader-pelosi", "trader-risk",
+              "trader-alerts", "trader-rebalance"]
 
 
 def frontmatter(path):

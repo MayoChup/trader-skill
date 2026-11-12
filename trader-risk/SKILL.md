@@ -12,6 +12,8 @@ description: >-
   before /trader-broker, always.
 argument-hint: "[path to orders.json]"
 ---
+> **Kantor Rico:** jalankan semua perintah dari folder kerja `~/trader-desk` (`cd ~/trader-desk` dulu) supaya file `trader/` selalu sama. Jawab pemilik dalam Bahasa Indonesia. Kantor TIDAK tersambung ke broker: jangan pernah membeli/menjual.
+
 
 # trader-risk
 
@@ -20,12 +22,12 @@ written by trader-budget, trader-rebalance or trader-tax passes through it.
 A BLOCK is final for that order: it does not go to the user for a yes, and
 it does not go to the broker.
 
-`${CLAUDE_SKILL_DIR}` below is this skill's folder (where this SKILL.md lives).
+Skrip skill ini ada di folder `$HOME/.hermes/skills/trader-skill/trader-risk`.
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/check.py"             # trader/ files; writes trader/state/risk.json
-python3 "${CLAUDE_SKILL_DIR}/check.py" --json
-python3 "${CLAUDE_SKILL_DIR}/check.py" --no-write  # look without recording
+python3 "$HOME/.hermes/skills/trader-skill/trader-risk/check.py"             # trader/ files; writes trader/state/risk.json
+python3 "$HOME/.hermes/skills/trader-skill/trader-risk/check.py" --json
+python3 "$HOME/.hermes/skills/trader-skill/trader-risk/check.py" --no-write  # look without recording
 ```
 
 ## What it reads and writes

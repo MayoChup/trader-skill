@@ -8,7 +8,6 @@ from contextlib import redirect_stdout, redirect_stderr
 from _load import load, ROOT, FIX
 
 check = load("trader-risk", "check")
-ticket = load("trader-broker", "ticket")
 
 CFG_PATH = os.path.join(ROOT, "trader-budget", "config.example.json")
 ORDERS_PATH = os.path.join(FIX, "trader-risk", "orders-reel.json")
@@ -57,11 +56,6 @@ class TheReel(unittest.TestCase):
         self.assertIn("position:", why)
         self.assertIn("duplicate:", why)
 
-    def test_fingerprint_is_shared_with_the_broker(self):
-        o = reel_orders()[0]
-        self.assertEqual(check.fingerprint(o), ticket.fingerprint(o))
-        self.assertEqual(check.fingerprint(dict(o, why="anything")), check.fingerprint(o))
-        self.assertNotEqual(check.fingerprint(dict(o, notional="1251")), check.fingerprint(o))
 
 
 class Limits(unittest.TestCase):

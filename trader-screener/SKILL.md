@@ -11,6 +11,8 @@ description: >-
   stocks", or "growing companies under 30 times earnings".
 argument-hint: "[metrics file] [--rules rules.json]"
 ---
+> **Kantor Rico:** jalankan semua perintah dari folder kerja `~/trader-desk` (`cd ~/trader-desk` dulu) supaya file `trader/` selalu sama. Jawab pemilik dalam Bahasa Indonesia. Kantor TIDAK tersambung ke broker: jangan pernah membeli/menjual.
+
 
 # trader-screener
 
@@ -21,7 +23,7 @@ pass and every fail comes with the number and the threshold.
 Tool in this folder (standard library Python, no network):
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/screen.py" --help
+python3 "$HOME/.hermes/skills/trader-skill/trader-screener/screen.py" --help
 ```
 
 ## What it reads and writes
@@ -66,7 +68,7 @@ weighted average.
 3. Run the screen:
 
    ```bash
-   python3 "${CLAUDE_SKILL_DIR}/screen.py" trader/metrics.json --rules trader/rules.json \
+   python3 "$HOME/.hermes/skills/trader-skill/trader-screener/screen.py" trader/metrics.json --rules trader/rules.json \
      --prices trader/prices.json --out trader/shortlist.json
    ```
 

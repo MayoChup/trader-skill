@@ -50,6 +50,24 @@ script to identify itself: put your name and email in `trader/config.json`
 (`"sec_user_agent": "Your Name you@example.com"`) or in the `SEC_USER_AGENT`
 environment variable.
 
+
+## Kantor Rico (fork)
+
+Fork ini dipakai Divisi Trading di Kantor Virtual (Hermes Agent). Perubahan dari aslinya:
+
+- `trader-broker` dan `trader-tax` dihapus: kantor tidak pernah tersambung ke broker, dan aturan pajaknya untuk AS.
+- Skill baru `/trader-kantor`: AI memilih saham dan menjelaskan alasannya, sedangkan harga masuk, target,
+  stop loss dan ukuran posisi dihitung program kantor (`node kantor-server.js --trading ...`). Alert target
+  dan stop loss dikirim ke Telegram oleh kantor tanpa AI.
+- Path skrip mengarah ke `~/.hermes/skills/trader-skill/`, folder kerja `~/trader-desk`.
+
+Pasang di VPS:
+
+```bash
+git clone https://github.com/MayoChup/trader-skill ~/.hermes/skills/trader-skill
+mkdir -p ~/trader-desk/trader
+```
+
 ## The eleven
 
 | command | job | what it does |

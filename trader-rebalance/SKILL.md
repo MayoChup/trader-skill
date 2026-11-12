@@ -12,6 +12,8 @@ description: >-
   (monthly or quarterly) after /trader-copycat updates the targets.
 argument-hint: "[band in points]"
 ---
+> **Kantor Rico:** jalankan semua perintah dari folder kerja `~/trader-desk` (`cd ~/trader-desk` dulu) supaya file `trader/` selalu sama. Jawab pemilik dalam Bahasa Indonesia. Kantor TIDAK tersambung ke broker: jangan pernah membeli/menjual.
+
 
 # trader-rebalance
 
@@ -21,13 +23,13 @@ that drifted too far and proposes the trades that bring them back. It writes
 proposals only: trader-risk checks them and trader-broker asks the user yes
 or no for each one.
 
-`${CLAUDE_SKILL_DIR}` below is this skill's folder (where this SKILL.md lives).
+Skrip skill ini ada di folder `$HOME/.hermes/skills/trader-skill/trader-rebalance`.
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/rebalance.py"                    # the drift table, no files written
-python3 "${CLAUDE_SKILL_DIR}/rebalance.py" --band 5 --write   # proposals -> trader/orders.json
-python3 "${CLAUDE_SKILL_DIR}/rebalance.py" --sell-untracked   # also sell holdings not in the targets
-python3 "${CLAUDE_SKILL_DIR}/rebalance.py" --json
+python3 "$HOME/.hermes/skills/trader-skill/trader-rebalance/rebalance.py"                    # the drift table, no files written
+python3 "$HOME/.hermes/skills/trader-skill/trader-rebalance/rebalance.py" --band 5 --write   # proposals -> trader/orders.json
+python3 "$HOME/.hermes/skills/trader-skill/trader-rebalance/rebalance.py" --sell-untracked   # also sell holdings not in the targets
+python3 "$HOME/.hermes/skills/trader-skill/trader-rebalance/rebalance.py" --json
 ```
 
 ## What it reads and writes

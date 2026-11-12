@@ -13,6 +13,8 @@ description: >-
   "run the Pelosi skill".
 argument-hint: "[member name] [--read]"
 ---
+> **Kantor Rico:** jalankan semua perintah dari folder kerja `~/trader-desk` (`cd ~/trader-desk` dulu) supaya file `trader/` selalu sama. Jawab pemilik dalam Bahasa Indonesia. Kantor TIDAK tersambung ke broker: jangan pernah membeli/menjual.
+
 
 # trader-pelosi
 
@@ -30,7 +32,7 @@ Tool in this folder (standard library Python; `pdftotext` from poppler is
 optional, to read the PDFs locally):
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/ptr.py" --help
+python3 "$HOME/.hermes/skills/trader-skill/trader-pelosi/ptr.py" --help
 ```
 
 ## What it reads and writes
@@ -60,9 +62,9 @@ python3 "${CLAUDE_SKILL_DIR}/ptr.py" --help
 ## Step 1: what has been filed
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/ptr.py" index --member pelosi
-python3 "${CLAUDE_SKILL_DIR}/ptr.py" index --since 2026-10-01        # every member
-python3 "${CLAUDE_SKILL_DIR}/ptr.py" index --member "Josh Gottheimer" --year 2025
+python3 "$HOME/.hermes/skills/trader-skill/trader-pelosi/ptr.py" index --member pelosi
+python3 "$HOME/.hermes/skills/trader-skill/trader-pelosi/ptr.py" index --since 2026-10-01        # every member
+python3 "$HOME/.hermes/skills/trader-skill/trader-pelosi/ptr.py" index --member "Josh Gottheimer" --year 2025
 ```
 
 `--member` takes a last name, "First Last" or "Last, First", and repeats.
@@ -71,7 +73,7 @@ python3 "${CLAUDE_SKILL_DIR}/ptr.py" index --member "Josh Gottheimer" --year 202
 ## Step 2: watch for new ones
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/ptr.py" new --member pelosi --read
+python3 "$HOME/.hermes/skills/trader-skill/trader-pelosi/ptr.py" new --member pelosi --read
 ```
 
 Shows only PTRs not seen at the last check (the first run shows the last 45
@@ -84,8 +86,8 @@ is plenty: run it with `/loop 1h` or a scheduled task.
 ## Step 3: read a report
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/ptr.py" fetch 20035143
-python3 "${CLAUDE_SKILL_DIR}/ptr.py" parse ptr.txt --filed 2026-08-21 --json
+python3 "$HOME/.hermes/skills/trader-skill/trader-pelosi/ptr.py" fetch 20035143
+python3 "$HOME/.hermes/skills/trader-skill/trader-pelosi/ptr.py" parse ptr.txt --filed 2026-08-21 --json
 ```
 
 `fetch` saves the PDF and, if `pdftotext` is installed, prints the rows. If it

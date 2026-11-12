@@ -12,6 +12,8 @@ description: >-
   top 5", or names any fund or famous investor.
 argument-hint: "[investor, fund or CIK] [--top N]"
 ---
+> **Kantor Rico:** jalankan semua perintah dari folder kerja `~/trader-desk` (`cd ~/trader-desk` dulu) supaya file `trader/` selalu sama. Jawab pemilik dalam Bahasa Indonesia. Kantor TIDAK tersambung ke broker: jangan pernah membeli/menjual.
+
 
 # trader-copycat
 
@@ -24,7 +26,7 @@ weights for your own account.
 Tool in this folder (standard library Python, no keys):
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/edgar13f.py" --help
+python3 "$HOME/.hermes/skills/trader-skill/trader-copycat/edgar13f.py" --help
 ```
 
 SEC asks every program to identify itself with a name and email. Set it once
@@ -67,8 +69,8 @@ never invent one.
 ## Step 1: find the investor
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/edgar13f.py" find buffett
-python3 "${CLAUDE_SKILL_DIR}/edgar13f.py" find "pershing square" --sec
+python3 "$HOME/.hermes/skills/trader-skill/trader-copycat/edgar13f.py" find buffett
+python3 "$HOME/.hermes/skills/trader-skill/trader-copycat/edgar13f.py" find "pershing square" --sec
 ```
 
 `filers.json` lists 23 well-known filers with CIKs checked against SEC on
@@ -79,8 +81,8 @@ a filer has stopped filing (Scion's last 13F-HR was 2025-11-03), say so.
 ## Step 2: read the latest quarter
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/edgar13f.py" filings 1067983
-python3 "${CLAUDE_SKILL_DIR}/edgar13f.py" holdings 1067983 --combine --top 15
+python3 "$HOME/.hermes/skills/trader-skill/trader-copycat/edgar13f.py" filings 1067983
+python3 "$HOME/.hermes/skills/trader-skill/trader-copycat/edgar13f.py" holdings 1067983 --combine --top 15
 ```
 
 It downloads the submissions list, picks the newest original 13F-HR, finds the
@@ -96,7 +98,7 @@ the quarter, the tool says so; read it with `--accession`.
 ## Step 3: what changed
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/edgar13f.py" diff 1067983
+python3 "$HOME/.hermes/skills/trader-skill/trader-copycat/edgar13f.py" diff 1067983
 ```
 
 New positions, positions sold out, added and trimmed, by share count against
@@ -106,7 +108,7 @@ shares at June 30 than at March 31", never "bought on" a day.
 ## Step 4: write the targets
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/edgar13f.py" copy 1067983 --top 5 --out trader/targets.json
+python3 "$HOME/.hermes/skills/trader-skill/trader-copycat/edgar13f.py" copy 1067983 --top 5 --out trader/targets.json
 ```
 
 Share classes are combined by default (`--separate` keeps them apart).
