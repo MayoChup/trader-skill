@@ -35,6 +35,10 @@ Jangan membuat jadwal sendiri untuk itu dan jangan memakai trader-alerts untuk p
 
 ## Menyusun "strategi trading hari ini"
 
+0. **Baca laporan tim dulu.** Nina, Raka, dan Sari menulis laporan tiap hari kerja jam 19.00 WIB:
+   `~/trader-desk/laporan/<YYYY-MM-DD>-berita.md`, `-fundamental.md`, `-smartmoney.md` (tanggal WIB hari ini).
+   Pakai isinya sebagai bahan utama dan sebut sumbernya di alasan (mis. "dibeli 3 investor besar - laporan Sari").
+   Kalau salah satu laporan belum ada, lanjutkan dengan langkah di bawah untuk bagian yang kurang.
 1. **Kandidat.** Ambil watchlist (`watchlist lihat`). Boleh tambah ide dari skill lain:
    `trader-copycat` (saham yang baru dibeli investor besar), `trader-pelosi` (transaksi baru anggota Kongres),
    `trader-screener` / `trader-analyst` (laporan keuangan kuat). Jangan lebih dari 8 kandidat.
