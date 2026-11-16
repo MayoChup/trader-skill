@@ -12,7 +12,7 @@ description: >-
   "run the analyst on my holdings".
 argument-hint: "[tickers]"
 ---
-> **Kantor Rico:** jalankan semua perintah dari folder kerja `~/trader-desk` (`cd ~/trader-desk` dulu) supaya file `trader/` selalu sama. Jawab pemilik dalam Bahasa Indonesia. Kantor TIDAK tersambung ke broker: jangan pernah membeli/menjual.
+> **Kantor Rico:** SEC sering memblokir IP server (HTTP 403). `facts.py` otomatis memakai cadangan Nasdaq.com bila SEC gagal; hasilnya ditandai "Source: Nasdaq.com" dan pertumbuhannya dibanding KUARTAL SEBELUMNYA (bukan tahun lalu), jadi sebutkan itu ke pemilik. Jalankan semua perintah dari folder kerja `~/trader-desk` (`cd ~/trader-desk` dulu) supaya file `trader/` selalu sama. Jawab pemilik dalam Bahasa Indonesia. Kantor TIDAK tersambung ke broker: jangan pernah membeli/menjual.
 
 
 # trader-analyst
